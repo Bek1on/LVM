@@ -1,0 +1,55 @@
+PinthysicalHardDrive class:
+-Constructor that takes in a String and an int, these are used to initialize the instance variables name and size, which are a String and an int, respectively
+-The peevee instance is left alone until the user sets a PhysicalVolume instance to the PhysicalHardDrive instance
+-getSize() method is utilized to return an instance's size variable
+-getName() method is utilized to return an instance's name variable
+-hasPhysical() method is used to check if a PhysicalHardDrive instance has an associated PhysicalVolume instance
+-setPV() is used to set a PhysicalVolume instance to the PhysicalHardDrive instance
+
+PrePV class:
+-Constructor that takes in a String and an int, the instance variables name and storage are initialized with the values within the parameters. Additionally, the uuid variable is intialized using a UUID generator
+-getID() method returns a PrePV instance's UUID
+-getName() method returns the name of an instance
+-getStorage() returns the amount of storage within an instance
+-setStorage() changes the storage amount based on the value within its parameters
+
+
+PhysicalVolume class:
+-This class extends the PrePV class
+-Constructor has a super call to PrePv's constructor, the parameter's being name and the size of the PhysicalHardDrive within the constructor's parameters
+-The hardDrive instance variable is also set
+-getHDrive() returns the PhysicalHardDrive instance associated with the PhysicalVolume class
+-getVG() returns the VolumeGroup instance this PhysicalVolume instance is associated with
+-inVG() is used to determine if a PhysicalVolume instance is within a VolumeGroup instance
+
+VolumeGroup class:
+-This class extends the PrePV class
+-Constructor initializes an instance with a super call to the PrePV class's constructor, with the parameters being the name of the VolumeGroup and the storage associated with the PhysicalVolume instance
+-The two ArrayList instance variables, physicalVolumes and logicalVolumes, are initialized as well and the PhysicalVolume instance p is added to the physicalVolumes ArrayList
+-getStored() returns the int amount within the variable stored
+-addToVolume() adds a PhysicalVolume instance to the physicalVolumes ArrayList while also changing the storage amount
+-addToLog() checks to see if the LogVolume instance within its parameters is able to be added, it returns true if the LogVolume is added to logicalVolumes and false if not
+-getPhysicalVolumes() returns the instance physicalVolumes
+-getLogicalVolumes() returns the instance logicalVolumes
+
+LogVolume class:
+-This class extends the PrePV class
+-Constructor utilizes a super call to accept its parameter values of name and space, the veegee instance variable is then set to the vg parameter value
+-getVG() returns the VolumeGroup instance that a LogVolume instance would associate with
+
+Commands class:
+-Constructor has no parameters
+-The class has four instance variables, each of them being ArrayList objects. They are ArrayLists containing all the existing PhysicalHardDrive, LogVolume, PhysicalVolume and VolumeGroup instances
+-installDrive() checks to see if a PhysicalHardDrive is able to be produced, if it is, then a new PhysicalHardDrive is added to existingHards and the method returns true
+-driveList() prints out all inputted hard drives
+-pvolumeCreate() checks to see if a PhysicalVolume is able to be produced, if it is, the new instance is added to existingVolumes and the method returns true
+-veegeeCreate() checks the requires needed to produce a VolumeGroup and returns true if it is able to while adding a new instance to existingVG
+-vgAdd() checks to see if the PhysicalVolume name within its parameters exists, and then sees if the instance has no associated VolumeGroup. It then adds the instance to the VolumeGroup via the addToVolume() method
+and returns true
+-vgList() prints out all inputted VolumeGroups in the required format
+-lvCreate() checks to see if a new LogVolume is able to be made, and returns true if it is able to make an instance, adding that instance to existingLogs
+-logList() prints out all inputted LogVolume instances in the required format
+-pvList() prints out all inputted PhysicalVolume instances in the required format
+
+
+
