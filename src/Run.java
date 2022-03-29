@@ -9,7 +9,7 @@ public class Run {
             input = scan.nextLine();
             String[] seperate = input.split(" ");
             if (seperate[0].equals("install-drive")) {
-                if (!pleasework.installDrive(seperate[1], Integer.parseInt(seperate[2]))) {
+                if (!pleasework.installDrive(seperate[1], Integer.parseInt(seperate[2].substring(0,seperate[2].length()-1)))) {
                     System.out.println("NOPE! Can't do that!");
                 } else {
                     System.out.println("Drive Installation Successful");

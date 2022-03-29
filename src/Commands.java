@@ -154,11 +154,11 @@ public class Commands {
         for(int i = 0; i < existingVolumes.size();i++)
         {
             if(existingVolumes.get(i).inVG()) {
-                System.out.println(existingVolumes.get(i).getName() + "[" + existingVolumes.get(i).getStorage() + "G] [" + existingVolumes.get(i).getVG().getName() + "] [" + existingVolumes.get(i).getID());
+                System.out.println(existingVolumes.get(i).getName() + "[" + existingVolumes.get(i).getStorage() + "G] [" + existingVolumes.get(i).getVG().getName() + "] [" + existingVolumes.get(i).getID() + "]");
             }
             else
             {
-                System.out.println(existingVolumes.get(i).getName() + "[" + existingVolumes.get(i).getStorage() + "G] [" + existingVolumes.get(i).getID());
+                System.out.println(existingVolumes.get(i).getName() + "[" + existingVolumes.get(i).getStorage() + "G] [" + existingVolumes.get(i).getID() + "]");
             }
         }
     }
