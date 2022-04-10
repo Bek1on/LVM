@@ -9,7 +9,7 @@ public class Run {
             input = scan.nextLine();
             String[] seperate = input.split(" ");
             if (seperate[0].equals("install-drive")) {
-                if (!pleasework.installDrive(seperate[1], Integer.parseInt(seperate[2]))) {
+                if (!pleasework.installDrive(seperate[1], Integer.parseInt(seperate[2].substring(0,seperate[2].length()-1)))) {
                     System.out.println("NOPE! Can't do that!");
                 } else {
                     System.out.println("Drive Installation Successful");
@@ -56,13 +56,13 @@ public class Run {
                     System.out.println("Volume Group Addition Successful");
                 }
             }
-            if(seperate[0].equals("vgList"))
+            if(seperate[0].equals("vglist"))
             {
                 pleasework.vgList();
             }
             if(seperate[0].equals("lvcreate"))
             {
-                if (!pleasework.lvCreate(seperate[1],Integer.parseInt(seperate[2]),seperate[3])) {
+                if (!pleasework.lvCreate(seperate[1],Integer.parseInt(seperate[2].substring(0,seperate[2].length()-1)),seperate[3])) {
                     System.out.println("NOPE! Can't do that!");
                 }
                 else

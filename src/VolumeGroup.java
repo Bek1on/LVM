@@ -36,9 +36,18 @@ public class VolumeGroup extends PrePV {
             return true;
     }
 
-    public ArrayList<PhysicalVolume> getPhysicalVolumes()
+    public String getPhysicalVolumes()
     {
-        return physicalVolumes;
+        String ret = "";
+        for(int i = 0; i < physicalVolumes.size();i++)
+        {
+            ret += physicalVolumes.get(i).getName();
+            if(physicalVolumes.size() > 1 && i != physicalVolumes.size()-1)
+            {
+                ret += ", ";
+            }
+        }
+        return ret;
     }
 
     public ArrayList<LogVolume> getLogicalVolumes()

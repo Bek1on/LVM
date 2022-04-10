@@ -114,7 +114,7 @@ public class Commands {
     {
         for(int i = 0; i < existingVG.size();i++)
         {
-            System.out.println(existingVG.get(i).getName() + ": Total: [" + existingVG.get(i).getStorage() + "G] availible :[" + (existingVG.get(i).getStorage()-existingVG.get(i).getStored()) + "G] " + existingVG.get(i).getPhysicalVolumes().toString() + " [" + existingVG.get(i).getID() + "]");
+            System.out.println(existingVG.get(i).getName() + ": Total: [" + existingVG.get(i).getStorage() + "G] available :[" + (existingVG.get(i).getStorage()-existingVG.get(i).getStored()) + "G] [" + existingVG.get(i).getPhysicalVolumes() + "] [" + existingVG.get(i).getID() + "]");
         }
     }
 
@@ -145,7 +145,7 @@ public class Commands {
     {
         for(int i = 0; i < existingLogs.size();i++)
         {
-            System.out.println(existingLogs.get(i).getName() + ": [" + existingLogs.get(i).getStorage() + "] [" + existingLogs.get(i).getVG().getName() + "] [" + existingLogs.get(i) + "]");
+            System.out.println(existingLogs.get(i).getName() + ": [" + existingLogs.get(i).getStorage() + "G] [" + existingLogs.get(i).getVG().getName() + "] [" + existingLogs.get(i).getID() + "]");
         }
     }
 
@@ -154,11 +154,11 @@ public class Commands {
         for(int i = 0; i < existingVolumes.size();i++)
         {
             if(existingVolumes.get(i).inVG()) {
-                System.out.println(existingVolumes.get(i).getName() + "[" + existingVolumes.get(i).getStorage() + "G] [" + existingVolumes.get(i).getVG().getName() + "] [" + existingVolumes.get(i).getID());
+                System.out.println(existingVolumes.get(i).getName() + "[" + existingVolumes.get(i).getStorage() + "G] [" + existingVolumes.get(i).getVG().getName() + "] [" + existingVolumes.get(i).getID() + "]");
             }
             else
             {
-                System.out.println(existingVolumes.get(i).getName() + "[" + existingVolumes.get(i).getStorage() + "G] [" + existingVolumes.get(i).getID());
+                System.out.println(existingVolumes.get(i).getName() + "[" + existingVolumes.get(i).getStorage() + "G] [" + existingVolumes.get(i).getID() + "]");
             }
         }
     }
